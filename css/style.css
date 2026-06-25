@@ -1313,6 +1313,20 @@ header .mobile-menu {
 	text-align: center;
 }
 
+.clients .achievement-summary {
+	max-width: 850px;
+	margin: 0 auto 30px;
+	padding: 24px 30px;
+	background: #000;
+	border-radius: 20px;
+	line-height: 1.7;
+	text-align: center;
+}
+
+.clients .achievement-summary p {
+	margin: 0;
+}
+
 .clients .swiper {
 	width: 850px;
 	height: 340px;
