@@ -295,6 +295,13 @@
       },
     });
 
+    $('[data-inline-image]').each(function () {
+      var imageKey = $(this).data('inline-image');
+      if (window.PORTFOLIO_IMAGE_ASSETS && window.PORTFOLIO_IMAGE_ASSETS[imageKey]) {
+        $(this).attr('src', window.PORTFOLIO_IMAGE_ASSETS[imageKey]);
+      }
+    });
+
     /* ----------------------------------------------------------- */
     /*  Text Animation - Typed JS
     /* ----------------------------------------------------------- */
