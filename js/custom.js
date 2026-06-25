@@ -56,8 +56,7 @@
       $(".portfolio .single-item .details").width() -
       10;
     var contactwidth = portfoliowidth + $(".contact").width() - 10;
-    var blogwidth =
-      contactwidth + $(".blog").width() + $(".copyright").width() - 10;
+    var copyrightwidth = contactwidth + $(".copyright").width() - 10;
 
     /* ----------------------------------------------------------- */
     /*  HORIZONTAL SCROLL & REVEAL ANIMATIONS
@@ -223,12 +222,6 @@
       });
     });
 
-    $("#blog-link").on("click", function () {
-      $("#wrapper").mCustomScrollbar("scrollTo", "#blog", {
-        scrollInertia: 1100,
-      });
-    });
-
     $("#menu li a").on("click", function () {
       $("#checkboxmenu").trigger("click");
     });
@@ -306,12 +299,24 @@
     /*  Text Animation - Typed JS
     /* ----------------------------------------------------------- */
 
+    function updateExperienceYears() {
+      $(".experience-years").each(function () {
+        var startYear = parseInt($(this).data("experience-start-year"), 10);
+        if (!Number.isNaN(startYear)) {
+          var years = Math.max(new Date().getFullYear() - startYear, 0);
+          $(this).text(years + "+ years");
+        }
+      });
+    }
+
+    updateExperienceYears();
+
     var typed = new Typed("#typed-text", {
       strings: [
-        "Business Data Analyst",
-        "Data Visualisation Specialist",
-        "Business Intelligence Analyst",
-        "Lifelong Learner",
+        "Senior BI Analyst",
+        "Power BI Developer",
+        "Embedded Analytics Specialist",
+        "AI Prompt Engineering Practitioner",
       ],
       typeSpeed: 20,
       backSpeed: 20,
